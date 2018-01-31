@@ -9,8 +9,8 @@
 
     - name: add user nologin for vsftpd
       user:
-        name: filerapid
-        password: nobody@home
+        name: "{{new_user}}"
+        password: "{{new_password}}"
         shell: /usr/sbin/nologin
 
   when:
