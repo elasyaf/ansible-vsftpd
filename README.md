@@ -16,7 +16,7 @@ ansible-playbook (your playbook)
 # Example playbook
 ```
 - name: ansible vsftpd
-  hosts: localhost
+  hosts: all
   become: true
 
   roles:
