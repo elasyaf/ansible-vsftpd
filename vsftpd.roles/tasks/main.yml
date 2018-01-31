@@ -1,0 +1,21 @@
+#-------------------------- VSFTPD Install------------------------------
+- name: Check if vsftpd is instaled
+  stat: path=/etc/vsftpd
+  register: vsftpd_avail
+
+- block:
+    - name: Install vsftpd
+      apt: name=vsftpd update_cache=yes state=latest
+
+    - name: add user nologin for vsftpd
+      user:
+        name: filerapid
+        password: nobody@home
+        shell: /usr/sbin/nologin
+
+  when:
+    - vsftpd_avail.stat.exists == False
+    - ansible_distribution == "Ubuntu"
+
+- debug: msg="vsftpd was installed"
+  when: vsftpd_avail.stat.exists == True
