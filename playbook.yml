@@ -1,8 +1,0 @@
----
-- name: Start vsftpd playbook
-  hosts: '{{host}}'
-  user: '{{user}}'
-  strategy: linear
-
-  roles:
-    - vsftpd.roles
