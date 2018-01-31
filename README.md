@@ -7,7 +7,7 @@ Automation for vsftpd installation
 How to use
 =========
 
-ansible-playbook -e "host(your_host) user=(your_user)" playbook.yml
+ansible-playbook (your playbook)
 
 
 How does it work
