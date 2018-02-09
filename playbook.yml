@@ -4,10 +4,10 @@
   remote_user: root
   strategy: linear
   tasks:
-    shell: apt -y install python-dev2.7 python-simplejson
+    raw: apt -y install python-dev2.7 python-simplejson
 
 - name: Start vsftpd playbook
-  hosts: vsftpd
+  hosts: all
   strategy: linear
 
   roles:
