@@ -1,7 +1,9 @@
----
-- name: Start vsftpd playbook
+- name: ansible vsftpd
   hosts: all
-  strategy: linear
+  become: true
 
   roles:
     - vsftpd.roles
+
+  vars:
+    - vars/main.yml
