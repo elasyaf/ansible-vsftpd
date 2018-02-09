@@ -1,0 +1,7 @@
+---
+- name: Start vsftpd playbook
+  hosts: all
+  strategy: linear
+
+  roles:
+    - vsftpd.roles
