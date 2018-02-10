@@ -1,6 +1,6 @@
 ---
 - name: Start vsftpd playbook
-  hosts: 192.168.56.102
+  hosts: '{{host}}'
   user: root
   strategy: linear
 
