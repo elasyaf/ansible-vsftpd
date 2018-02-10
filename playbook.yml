@@ -1,17 +1,8 @@
 ---
-- name: install python support
-  hosts: vsftpd
-  remote_user: root
-  strategy: linear
-  tasks:
-    raw: apt -y install python-dev2.7 python-simplejson
-
 - name: Start vsftpd playbook
-  hosts: all
+  hosts: vsftpd
+  user: root
   strategy: linear
 
   roles:
     - vsftpd.roles
-
-  vars_files:
-    - vsftpd.roles/vars/main.yml
