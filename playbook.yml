@@ -1,6 +1,7 @@
 ---
 - name: Start vsftpd playbook
   hosts: '{{host}}'
+  gather_facts: False
   user: root
   strategy: linear
 
